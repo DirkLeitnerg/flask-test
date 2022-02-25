@@ -29,5 +29,5 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        pylint service
-        #pylint $(git ls-files '*.py')
+       
+        pylint $(git ls-files '/service/*.py')
