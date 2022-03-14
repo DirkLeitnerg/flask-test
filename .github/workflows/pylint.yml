@@ -19,6 +19,12 @@ jobs:
         python-version: ["3.8"]
     steps:
     - uses: actions/checkout@v2
+    - name: check docker
+    steps:
+    - uses: actions/checkout@v2 
+    - uses: hadolint/hadolint-action@v1.6.0
+      with:
+        dockerfile: Dockerfile
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
