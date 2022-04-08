@@ -30,8 +30,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
     
     - name: Create directory
-      run: ${{env.TEST_G}} ${{env.TEST_PART1}}${{env.TEST_PART2}}
-    
+      run: |
+        ${{env.TEST_G}} ${{env.TEST_PART1}}${{env.TEST_PART2}}
+        ls
     
     - name: Install dependencies
       run: |
