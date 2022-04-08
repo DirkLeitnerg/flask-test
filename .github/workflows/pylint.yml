@@ -10,7 +10,10 @@ on:
         default: '1'
         # Input has to be provided for the workflow to run
         required: true
-
+env:
+  TEST_G: mkdir
+  TEST_PART1: AAAA
+  TEST_PART2: BBBB
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,6 +28,9 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+    
+    - name: Create directory
+      run: ${{env.TEST_G}} ${{env.TEST_PART1}}&${{env.TEST_PART1}}
     
     
     - name: Install dependencies
